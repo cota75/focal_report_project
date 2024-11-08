@@ -37,7 +37,7 @@ Python3 is required for this as well as two python libraries/utilities (csv-diff
   pip3 install --user diff-pdf-visually
   ```
 
-### Instructions
+## Instructions
 
 1. Clone the repo
    ```sh
@@ -67,7 +67,7 @@ Python3 is required for this as well as two python libraries/utilities (csv-diff
 
 
 
-### Test Cases
+## Test Cases
 1. Check the diff in CSV using the . If there are no differences -> Pass. If there are differences -> Fail.
 2. Check the PDF image structure. If there are no differences -> Pass. If there are differences -> Fail.
 3. Additional checks for test quality could include the following:
