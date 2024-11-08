@@ -70,7 +70,10 @@ Python3 is required for this as well as two python libraries/utilities (csv-diff
 ### Test Cases
 1. Check the diff in CSV using the . If there are no differences -> Pass. If there are differences -> Fail.
 2. Check the PDF image structure. If there are no differences -> Pass. If there are differences -> Fail.
-3. Additional checks for test quality would be to check expected format for the values (i.e., date format), if there is a record mismatch (i.e., staging has one more row than production for the same report), also if the values for the cell match what the column expects (i.e., if the column is  "Article Name" and the value is a date or some other non-string value). 
+3. Additional checks for test quality could include the following:
+   * to check expected format for the values (i.e., date format)
+   * if there is a record mismatch (i.e., staging has one more row than production for the same report)
+   * if the values for the cell match what the column expects (i.e., if the column is  "Article Name" it should have text in it and not a number)
 
 
 
