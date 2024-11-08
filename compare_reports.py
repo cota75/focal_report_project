@@ -3,6 +3,14 @@ from csv_diff import load_csv, compare
 from diff_pdf_visually import pdf_similar
 
 
+# Modify these values 
+prodCSV = 'prod/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.csv'
+stagingCSV = 'staging/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.csv'
+CSV_keyword = 'Article Number'
+
+prodPDF = 'prod/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.pdf'
+stagingPDF = 'staging/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.pdf'
+
 '''
 Utilizes csv-diff python library 
 
@@ -34,23 +42,6 @@ Utilizes diff-pdf-visually python library
 
 Instructions: https://pypi.org/project/diff-pdf-visually/
 
-For Mac 
-brew install poppler imagemagick
-pip3 install --user diff-pdf-visually
-
-For Windows PC 
-Install diff-pdf-visually via Pip.
-Install ImageMagick, e.g. via https://imagemagick.org/script/download.php
-Download pdftocairo/Poppler
-
-
-To see visual differences in PDF use diff-pdf: 
-https://vslavik.github.io/diff-pdf/
-
-mac os  
-brew install diff-pdf
-
-diff-pdf prod.pdf staging.pdf --output-diff=diff.pdf 
 '''
 def compare_pdf(file1, file2):
     pdf_diff = pdf_similar(file1, file2)
@@ -64,16 +55,11 @@ def compare_pdf(file1, file2):
 '''
 MAIN
 '''
-prodCSV = 'prod/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.csv'
-stagingCSV = 'staging/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.csv'
-prodPDF = 'prod/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.pdf'
-stagingPDF = 'staging/gap_report_grocery_focal_superstore_101_2024-10-28_2024-10-28.pdf'
-
 print("------------------------------------------------------------------------------")
-print(f"""Test 1: Comparing CSV using key 'Article Number'
+print(f"""Test 1: Comparing CSV using key {CSV_keyword}
         {prodCSV} 
         {stagingCSV} \n""")
-compare_csv(prodCSV, stagingCSV, 'Article Number')
+compare_csv(prodCSV, stagingCSV, CSV_keyword)
 
 print("\n\n\n------------------------------------------------------------------------------")
 print(f"""Test 2: Comparing PDF Files
